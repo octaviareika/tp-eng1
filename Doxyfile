@@ -1,0 +1,52 @@
+# Doxyfile 1.8.20
+
+# Project name
+PROJECT_NAME = MyVensim
+
+# Output directory
+OUTPUT_DIRECTORY = doc
+
+# Generate HTML documentation
+GENERATE_HTML = YES
+
+# Generate LaTeX documentation (optional)
+GENERATE_LATEX = NO
+
+# Enable the use of Graphviz for generating diagrams
+HAVE_DOT = YES
+
+# Path to the Graphviz dot tool (optional, adjust if Graphviz is in a non-standard location)
+DOT_PATH = /usr/bin/dot
+
+# Enable generation of class diagrams
+DOT_GENERATE_CLASS = YES
+
+# Enable generation of dependency graphs
+DOT_GENERATE_DEPENDENCIES = YES
+
+# Enable generation of directory graphs
+DOT_GENERATE_DIRECTORIES = YES
+
+# Maximum number of nodes in a graph (adjust as needed)
+DOT_GRAPH_MAX_NODES = 50
+
+# Generate detailed class diagrams
+GENERATE_CLASS_DIAGRAMS = YES
+
+# Extract all documentation, even if not explicitly documented
+EXTRACT_ALL = YES
+
+# Include source code in documentation
+INCLUDE_SOURCE_CODE = YES
+
+# Recursive directory search
+RECURSIVE = YES
+
+# Include graphs in HTML documentation
+GENERATE_TREEVIEW = YES
+
+# Suppress warnings and errors (adjust as needed)
+QUIET = NO
+WARNINGS = YES
+WARN_IF_UNDOCUMENTED = YES
+WARN_IF_DOC_ERROR = YES
