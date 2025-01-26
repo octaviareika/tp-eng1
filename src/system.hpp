@@ -10,46 +10,46 @@
  * 
  */
 class System {
-private:
-    std::string name; ///< System name
-    double accumulator; ///< System accumulator
+// private:
+//     std::string name; ///< System name
+//     double accumulator; ///< System accumulator
 
 public:
 
-    /**
-     * @brief Construct a new System object. Default constructor
-     * 
-     */
-    System();
+    // /**
+    //  * @brief Construct a new System object. Default constructor
+    //  * 
+    //  */
+    // System();
 
-    /**
-     * @brief Construct a new System object. Copy constructor
-     * 
-     * @param other System to be copied
-     */
-    System(const System &other);
+    // /**
+    //  * @brief Construct a new System object. Copy constructor
+    //  * 
+    //  * @param other System to be copied
+    //  */
+    // System(const System &other);
 
 
-    /**
-     * @brief Construct a new System object
-     * 
-     * @param name System name
-     * @param accumulator System accumulator
-     */
-    System(std::string name, double accumulator);
+    // /**
+    //  * @brief Construct a new System object
+    //  * 
+    //  * @param name System name
+    //  * @param accumulator System accumulator
+    //  */
+    // System(std::string name, double accumulator);
 
-    /**
-     * @brief Construct a new System object
-     * 
-     * @param name System name
-     */
-    System(std::string name);
+    // /**
+    //  * @brief Construct a new System object
+    //  * 
+    //  * @param name System name
+    //  */
+    // System(std::string name);
 
-    /**
-     * @brief Destroy the System object
-     * 
-     */
-    ~System();
+    // /**
+    //  * @brief Destroy the System object
+    //  * 
+    //  */
+    // ~System();
 
     /**
      * @brief Get the name of the system
@@ -57,44 +57,30 @@ public:
      * @return std::string System name
      */
 
-    std::string getName();
+    virtual std::string getName() = 0;
 
     /**
      * @brief Get the accumulator of the system
      * 
      * @return double System accumulator
      */
-    double getAccumulator();
+    virtual double getAccumulator() = 0;
 
     /**
      * @brief Set the name of the system
      * 
      * @param name System name
      */
-    void setName(std::string name);
+    virtual void setName(std::string name) = 0;
 
     /**
      * @brief Set the accumulator of the system
      * 
      * @param accumulator System accumulator
      */
-    void setAccumulator(double accumulator);
+    virtual void setAccumulator(double accumulator) = 0;
 
-    /**
-     * @brief Copy assignment operator
-     * 
-     * @param other System to be copied
-     * @return System& Reference to the copied system
-     */
-    System(System &&other) noexcept;
 
-    /**
-     * @brief Move assignment operator
-     * 
-     * @param other System to be moved
-     * @return System& Reference to the moved system
-     */
-    System& operator=(System &&other) noexcept;
 };
 
 #endif // SYSTEM_HPP

@@ -2,78 +2,54 @@
 #define MYSIM_H
 
 #include <vector>
-#include "system.hpp"
 #include "flow.hpp"
-
-/**
- * @brief Simulator class
- * 
- * The Simulator class represents the simulation environment. It contains a list of systems and a list of flows.
- * The Simulator class is responsible for running the simulation
- * 
- */
+#include "system.hpp"
 
 class Simulator {
-private:
-    std::vector<System *> systems; ///< List of systems
-    std::vector<Flow *> flows; ///< List of flows
-
 public:
-
-    /**
-     * @brief Construct a new Simulator object
-     * 
-     */
-    Simulator();
-
-    /**
-     * @brief Destroy the Simulator object
-     * 
-     */
-    ~Simulator();
+    virtual ~Simulator() = default;
 
     /**
      * @brief Add a system to the simulator
      * 
      * @param system System to be added
      */
-    void add(System *system);
+    virtual void add(System *system) = 0;
 
     /**
      * @brief Add a flow to the simulator
      * 
      * @param flow Flow to be added
      */
-    void add(Flow *flow);
+    virtual void add(Flow *flow) = 0;
 
     /**
      * @brief Get the systems object
      * 
      * @return std::vector<System *> List of systems
      */
-    std::vector<System *> getSystems() const;
+    virtual std::vector<System *> getSystems() const = 0;
 
     /**
      * @brief Get the flows object
      * 
      * @return std::vector<Flow *> List of flows
      */
-    std::vector<Flow *> getFlows() const;
+    virtual std::vector<Flow *> getFlows() const = 0;
 
     /**
      * @brief Set the systems object
      * 
      * @param systems List of systems
      */
-    void setSystems(std::vector<System *> systems);
-
+    virtual void setSystems(std::vector<System *> systems) = 0;
 
     /**
      * @brief Set the flows object
      * 
      * @param flows List of flows
      */
-    void setFlows(std::vector<Flow *> flows);
+    virtual void setFlows(std::vector<Flow *> flows) = 0;
 
     /**
      * @brief Runs the simulation from the initial time to the final time.
@@ -85,7 +61,7 @@ public:
      * @param initialTime The initial time step of the simulation.
      * @param finalTime The final time step of the simulation.
      */
-    void run(int initialTime, int finalTime);
+    virtual void run(int initialTime, int finalTime) = 0;
 };
 
 #endif // MYSIM_H
